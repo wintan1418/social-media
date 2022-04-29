@@ -18,12 +18,13 @@ class SessionsController < ApplicationController
 end
 
 def destroy
-
 session[:user_id] =  nil
 flash[:success] = "You have logged out"
 redirect_to login_path
 end
+
 private
+
  def logged_in_redirect
   if logged_in?
     flash[:error] = "You are already logged in"
